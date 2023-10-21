@@ -4,23 +4,38 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+
 #include "SOTECPlatformBase.generated.h"
 
-UCLASS()
+UCLASS(Abstract)
 class SOTEC_API ASOTECPlatformBase : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ASOTECPlatformBase();
+
+	UPROPERTY(EditDefaultsOnly)
+	UStaticMeshComponent* Mesh;
+
+	UPROPERTY(EditAnywhere)
+	FVector StartMovementPoint;
+
+	UPROPERTY(EditAnywhere)
+	FVector FinishMovementPoint;
+
+	UPROPERTY(EditAnywhere)
+	int32 MovementSpeed = 100;
+	
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+	virtual void Move(float DeltaTime);
+
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
 };
