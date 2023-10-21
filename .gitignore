@@ -1,6 +1,15 @@
 # Visual Studio 2015 user specific files
 .vs/
 
+# JetBrains
+*.iml
+*.ipr
+*.iws
+.idea/
+/out/
+.idea_modules/
+atlassian-ide-plugin.xml
+
 # Compiled Object files
 *.slo
 *.lo

@@ -1,0 +1,35 @@
+StatementMacros: ['UPROPERTY', 'UFUNCTION', 'UCLASS', 'USTRUCT', 'UENUM', 'UINTERFACE', 'GENERATED_BODY']
+Language:                                       Cpp
+BasedOnStyle:                                   Microsoft
+
+IndentWidth:                                    4
+TabWidth:                                       4
+UseTab:                                         Always
+Standard:                                       c++20
+AccessModifierOffset:                           -4
+AlignAfterOpenBracket:                          DontAlign
+AlignEscapedNewlines:                           Right
+AlignTrailingComments:                          true
+AllowShortCaseLabelsOnASingleLine:              true
+AllowShortFunctionsOnASingleLine:               InlineOnly
+BreakBeforeBraces:                              Allman
+BreakConstructorInitializersBeforeComma:        false
+ColumnLimit:                                    0
+PointerAlignment:                               Left
+SpacesInAngles:                                 false
+
+IncludeBlocks:   Regroup
+IncludeCategories:
+  - Regex:           '.*\.generated\.h'
+    Priority:        100
+  - Regex:           '.*(PCH).*'
+    Priority:        -1
+  - Regex:           '".*"'
+    Priority:        1
+  - Regex:           '^<.*\.(h)>'
+    Priority:        3
+  - Regex:           '^<.*>'
+    Priority:        4
+IncludeIsMainRegex: '([-_](test|unittest))?$'
+
+SpacesBeforeTrailingComments: 4
